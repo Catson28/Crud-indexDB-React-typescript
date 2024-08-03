@@ -2,6 +2,8 @@
 
 Para criar um CRUD em uma aplicação React utilizando TypeScript, Vite, e IndexedDB, siga os passos abaixo. Vou fornecer um exemplo básico para gerenciar uma lista de tarefas (to-do list).
 
+![](C:\Users\SMALL-PC\Desktop\lixo\my-app\public\012207.png)
+
 ### 1. Configuração do Projeto
 
 Primeiro, crie um novo projeto com Vite:
@@ -880,7 +882,7 @@ Vamos criar um aplicativo React com TypeScript usando Vite e adicionar um Servic
    import ReactDOM from "react-dom";
    import App from "./App";
    import "./style.css";
-
+   
    if ("serviceWorker" in navigator) {
      window.addEventListener("load", () => {
        navigator.serviceWorker
@@ -893,7 +895,7 @@ Vamos criar um aplicativo React com TypeScript usando Vite e adicionar um Servic
          });
      });
    }
-
+   
    ReactDOM.render(
      <React.StrictMode>
        <App />
@@ -935,7 +937,7 @@ Vamos criar um aplicativo React com TypeScript usando Vite e adicionar um Servic
 
    ```tsx
    import React, { useEffect } from "react";
-
+   
    function App() {
      useEffect(() => {
        if ("serviceWorker" in navigator && "SyncManager" in window) {
@@ -944,13 +946,13 @@ Vamos criar um aplicativo React com TypeScript usando Vite e adicionar um Servic
          });
        }
      }, []);
-
+   
      const sendMessage = () => {
        if (navigator.serviceWorker.controller) {
          navigator.serviceWorker.controller.postMessage("Hello from App");
        }
      };
-
+   
      return (
        <div>
          <h1>Service Worker Demo</h1>
@@ -958,7 +960,7 @@ Vamos criar um aplicativo React com TypeScript usando Vite e adicionar um Servic
        </div>
      );
    }
-
+   
    export default App;
    ```
 
